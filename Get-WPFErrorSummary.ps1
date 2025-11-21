@@ -1,5 +1,5 @@
 ﻿$errorsummary = $(get-content C:\Users\MattHardy\Downloads\WPF.log.20251118.log | %{$_ -split '\[Session Start\]\s*' -split '\[Session End\]\s*'} | ?{$_ -match "^2025"}
-get-content C:\Users\MattHardy\Downloads\WPF.log.20251119.log | %{$_ -split '\[Session Start\]' -split '\[Session End\]'} | ?{$_ -match "^2025"})
+get-content C:\Users\MattHardy\Downloads\WPF.log.20251119.log | %{$_ -split '\[Session Start\]\s*' -split '\[Session End\]\s*'} | ?{$_ -match "^2025"})
 
 Foreach ($row in $errorsummary) {
     $split = $row -split "\s+"
